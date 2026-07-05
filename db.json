@@ -1,0 +1,28 @@
+
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Fazer mercado",
+      "description": "Passar no Assaí e comprar banana, feijão, carne e manteiga", 
+      "completed": true,
+      "updatedAt": "2026-07-04T15:30:00.000Z"
+
+    },
+    {
+      "id": "2",
+      "title": "Estudar APIs REST",
+      "description": "Ver video aula do curso e realizar as atividades", 
+      "completed": true,
+      "updatedAt": "2026-07-04T18:00:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "Veriifcar pendências do trabalho",
+      "description": "Conversar com o gerente sobre as prioridades da rotina", 
+      "completed": false,
+      "updatedAt": "2026-06-04T23:00:00.000Z"
+    }
+
+  ]
+}
