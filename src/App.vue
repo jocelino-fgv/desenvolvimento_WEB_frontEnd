@@ -1,11 +1,10 @@
-<script setup>
-import Principal from './pages/Principal.vue';
-import Profile from './pages/Profile.vue';
+    <!-- //***Passo 3*** Rotas: criar router-link -->
+<script setup lang="ts">
 </script>
 
 <template>
   <div id="app">
-    <!-- //***Passo 3*** Rotas: criar router-link -->
+
     <nav>
       <router-link to="/"> Principal</router-link> |
       <router-link to="profile"> Perfil</router-link> |

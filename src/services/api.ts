@@ -3,8 +3,12 @@
 // ***Passo 9: importação da biblioteca axios e criação da instância http://localhost:3000/
 import axios from 'axios';
 
-const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
-})
+const baseURL = import.meta.env.VITE_API_URL
+
+if (!baseURL) {
+  throw new Error('VITE_API_URL não foi definida no .env')
+}
+
+const api = axios.create({ baseURL })
 
 export default api

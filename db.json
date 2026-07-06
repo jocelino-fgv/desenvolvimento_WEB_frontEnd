@@ -1,28 +1,34 @@
-
 {
-  "todos": [
+  "usuarios": [
     {
       "id": "1",
-      "title": "Fazer mercado",
-      "description": "Passar no Assaí e comprar banana, feijão, carne e manteiga", 
-      "completed": true,
-      "updatedAt": "2026-07-04T15:30:00.000Z"
-
-    },
-    {
-      "id": "2",
-      "title": "Estudar APIs REST",
-      "description": "Ver video aula do curso e realizar as atividades", 
-      "completed": true,
-      "updatedAt": "2026-07-04T18:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "title": "Veriifcar pendências do trabalho",
-      "description": "Conversar com o gerente sobre as prioridades da rotina", 
-      "completed": false,
-      "updatedAt": "2026-06-04T23:00:00.000Z"
+      "nome": "João",
+      "email": "joao@email.com",
+      "celular": "2188995521"
     }
-
-  ]
+  ],
+  "lista": [
+    {
+      "title": "Estudar APIs REST",
+      "description": "Ver video aula do curso e realizar as atividades",
+      "completed": true,
+      "updatedAt": "2026-07-05T22:08:46.759Z",
+      "id": "2"
+    },
+    {
+      "title": "Veriifcar pendências do trabalho",
+      "description": "Conversar com o gerente sobre as prioridades da rotina",
+      "completed": true,
+      "updatedAt": "2026-07-05T22:08:47.887Z",
+      "id": "3"
+    },
+    {
+      "title": "Teste",
+      "description": "dfdfdfd",
+      "completed": true,
+      "updatedAt": "2026-07-05T22:08:45.416Z",
+      "id": "suJu9X0INPw"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
