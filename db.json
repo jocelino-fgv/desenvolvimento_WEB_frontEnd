@@ -1,33 +1,27 @@
 {
-  "usuarios": [
-    {
-      "id": "1",
-      "nome": "João",
-      "email": "joao@email.com",
-      "celular": "2188995521"
-    }
-  ],
   "lista": [
     {
+      "id": "1",
       "title": "Estudar APIs REST",
-      "description": "Ver video aula do curso e realizar as atividades",
-      "completed": true,
-      "updatedAt": "2026-07-05T22:08:46.759Z",
-      "id": "2"
-    },
-    {
-      "title": "Veriifcar pendências do trabalho",
-      "description": "Conversar com o gerente sobre as prioridades da rotina",
-      "completed": true,
-      "updatedAt": "2026-07-05T22:08:47.887Z",
-      "id": "3"
-    },
-    {
-      "title": "Teste",
-      "description": "dfdfdfd",
-      "completed": true,
-      "updatedAt": "2026-07-05T22:08:45.416Z",
-      "id": "suJu9X0INPw"
+      "completed": false,
+      "atividades": [
+        {
+          "id": "1.1",
+          "texto": "Ver vídeo aula do curso",
+          "concluida": true
+        },
+        {
+          "id": "1.2",
+          "texto": "Fazer exercício 1",
+          "concluida": true
+        },
+        {
+          "id": "1.3",
+          "texto": "Fazer exercício 2",
+          "concluida": false
+        }
+      ],
+      "updatedAt": "2026-07-06T23:28:09.717Z"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

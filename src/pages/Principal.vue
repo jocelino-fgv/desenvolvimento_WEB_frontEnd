@@ -17,12 +17,17 @@ async function handleAdicionarTarefa() {
   await store.adicionarTarefa({
     title: novoTitulo.value,
     description: novaDescricao.value,
-    completed: false
+    completed: false,
+    atividades: []
   })
 
   novoTitulo.value = ''
   novaDescricao.value = ''
 }
+
+  novoTitulo.value = ''
+  novaDescricao.value = ''
+
 </script>
 
 <template>
@@ -54,15 +59,30 @@ async function handleAdicionarTarefa() {
         <li v-for="tarefa in store.tarefas" :key="tarefa.id">
           <span :class="{ concluida: tarefa.completed }">
             {{ tarefa.title }}
-          </span>
-
-          <button @click="store.marcarComoConcluida(tarefa.id)">
-            {{ tarefa.completed ? '↩️ Desfazer' : '✅ Concluir' }}
-          </button>
-
+          
           <button @click="store.removerTarefa(tarefa.id)">
             🗑️ Excluir
           </button>
+          </span>
+          
+          <ul>
+            <li v-for="atividade in tarefa.atividades" :key="atividade.id">
+              <span :class="{ concluida: tarefa.completed }">
+                {{ atividade.texto }}
+              </span>
+          <button @click="store.marcarComoConcluida(tarefa.id)">
+            {{ tarefa.completed ? '↩️ Desfazer' : '✅ Concluir' }}
+          </button>
+                    <button @click="store.removerTarefa(tarefa.id)">
+            🗑️ Excluir
+          </button>
+
+            </li>
+
+          </ul>
+          
+
+
         </li>
       </ul>
 
