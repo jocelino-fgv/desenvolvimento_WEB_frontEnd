@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import type { Tarefa, Atividade } from '@/types/Tarefa'
 import api from '@/services/api'
 
+
 export const useTarefasStore = defineStore('tarefas', () => {
 
   // STATE
@@ -109,18 +110,19 @@ async function adicionarAtividade(id: string, texto: string) {
     const tarefa = tarefas.value.find(t => t.id === tarefaId)
     if (!tarefa) return
 
-    const atividadesAnteriores = tarefa.atividades
+  
     const atividadesAtualizadas = tarefa.atividades.filter(a => a.id !== atividadeId)
 
-    tarefa.atividades = atividadesAtualizadas
+
 
     try {
       await api.patch(`/lista/${tarefaId}`, {
         atividades: atividadesAtualizadas,
         updatedAt: new Date().toISOString()
       })
+    tarefa.atividades = atividadesAtualizadas  
     } catch (e) {
-      tarefa.atividades = atividadesAnteriores
+
       erro.value = 'Erro ao remover atividade.'
       console.error(e)
     }
