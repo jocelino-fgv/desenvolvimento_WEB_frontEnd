@@ -69,19 +69,30 @@ async function handleAdicionarAtividade(tarefaId: string) {
 
       <ul class="tarefas-lista">
         <li v-for="tarefa in store.tarefas" :key="tarefa.id" class="tarefa-card">
-          <div class="tarefa-header">
-            <span class="tarefa-titulo" :class="{ concluida: tarefa.completed }">
-              {{ tarefa.title }}
-            </span>
-            <button
-              class="btn-icon"
-              title="Excluir tarefa"
-              @click="store.removerTarefa(tarefa.id)"
-            >
-              🗑️
-            </button>
-          </div>
+      <div class="tarefa-header">
+                  <label class="atividade-checkbox">
+                    <input
+                      type="checkbox"
+                      :checked="tarefa.completed"
+                      @change="store.marcarTarefaConcluida(tarefa.id)"
+                    />
+                    <span class="tarefa-titulo" :class="{ concluida: tarefa.completed }">
+                      {{ tarefa.title }}
+                    </span>
+                  </label>
 
+                  <p v-if="tarefa.description" class="tarefa-descricao">
+                    <span class="descricao-label">Descrição:</span> {{ tarefa.description }}
+                  </p>
+
+                  <button
+                    class="btn-icon"
+                    title="Excluir tarefa"
+                    @click="store.removerTarefa(tarefa.id)"
+                  >
+                    🗑️
+                  </button>
+                </div>
           <ul class="atividades-lista">
             <li v-for="atividade in tarefa.atividades" :key="atividade.id" class="atividade-item">
               <label class="atividade-checkbox">
@@ -99,21 +110,10 @@ async function handleAdicionarAtividade(tarefaId: string) {
                 title="Excluir atividade"
                 @click="store.removerAtividade(tarefa.id, atividade.id)"
               >
-                ✕
               </button>
             </li>
           </ul>
 
-          <div class="nova-atividade">
-            <input
-              v-model="novasAtividades[tarefa.id]"
-              placeholder="Nova atividade"
-              @keyup.enter="handleAdicionarAtividade(tarefa.id)"
-            />
-            <button class="btn btn-secondary" @click="handleAdicionarAtividade(tarefa.id)">
-              + Atividade
-            </button>
-          </div>
         </li>
       </ul>
     </div>
@@ -322,10 +322,37 @@ input:focus {
   padding: 0;
 }
 
+.tarefa-footer {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.tarefa-descricao {
+  flex: 1;
+  min-width: 140px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+  padding: 6px 10px;
+  background: #fafafc;
+  border-radius: 8px;
+  border-left: 2px solid var(--accent-light);
+}
+
+.descricao-label {
+  font-weight: 600;
+  opacity: 0.7;
+}
+
 .nova-atividade {
   display: flex;
   gap: 8px;
-  margin-top: 14px;
+  flex: 1;
+  min-width: 200px;
 }
 
 .nova-atividade input {

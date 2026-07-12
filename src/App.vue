@@ -6,8 +6,8 @@
   <div id="app">
 
     <nav>
-      <router-link to="/"> Principal</router-link> |
-      <router-link to="profile"> Perfil</router-link> |
+      <router-link to="/"> 🏠 Principal</router-link> |
+      <router-link to="profile">👤 Perfil</router-link> |
 
     </nav>  
     <router-view />

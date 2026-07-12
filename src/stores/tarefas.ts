@@ -59,6 +59,25 @@ export const useTarefasStore = defineStore('tarefas', () => {
     }
   }
 
+  async function marcarTarefaConcluida(id: string) {
+  const tarefa = tarefas.value.find(t => t.id === id)
+  if (!tarefa) return
+
+  const statusAnterior = tarefa.completed
+  tarefa.completed = !tarefa.completed
+
+  try {
+    await api.patch(`/lista/${id}`, {
+      completed: tarefa.completed,
+      updatedAt: new Date().toISOString()
+    })
+  } catch (e) {
+    tarefa.completed = statusAnterior
+    erro.value = 'Erro ao atualizar tarefa.'
+    console.error(e)
+  }
+}
+
   // ACTIONS - ATIVIDADES (subtarefas)
 async function adicionarAtividade(id: string, texto: string) {
   const tarefa = tarefas.value.find(t => t.id === id)
@@ -135,6 +154,7 @@ async function adicionarAtividade(id: string, texto: string) {
     totalTarefas,
     tarefasConcluidas,
     tarefasPendentes,
+    marcarTarefaConcluida,
     buscarTarefas,
     adicionarTarefa,
     removerTarefa,
