@@ -19,29 +19,68 @@
           "id": "51b2957d-a68d-4a3c-a3d8-0dabdf7e1663",
           "texto": "Revisar Conteúdo",
           "concluida": false
+        },
+        {
+          "id": "b496a7a9-43bc-4427-979e-67b2eacfb16d",
+          "texto": "Ver aulas youtube",
+          "concluida": false
         }
       ],
-      "updatedAt": "2026-07-12T18:44:09.719Z",
+      "updatedAt": "2026-07-12T19:25:46.594Z",
       "id": "Hx-S3UObuJM"
     },
     {
       "title": "Estudar Desenvolvimento WEB",
       "description": "Prepara para a prova final",
-      "completed": false,
+      "completed": true,
       "atividades": [
         {
           "id": "dd0d956e-881d-4cf3-a9c1-a857ace940e5",
           "texto": "estudar Vue",
-          "concluida": false
+          "concluida": true
         },
         {
           "id": "fac25355-26af-42c1-9464-1a698ef3b1c4",
           "texto": "Revisar HTML",
-          "concluida": false
+          "concluida": true
         }
       ],
-      "updatedAt": "2026-07-12T18:43:45.145Z",
+      "updatedAt": "2026-07-12T19:25:59.420Z",
       "id": "SZz3MCgTB0w"
+    },
+    {
+      "title": "Fazer supermemercado",
+      "description": "Passar no Atacarejo",
+      "completed": false,
+      "atividades": [
+        {
+          "id": "d34e5967-952b-4314-96ca-5519dc981b76",
+          "texto": "Feijão",
+          "concluida": false
+        },
+        {
+          "id": "597e454f-fdb8-4f4b-bba0-200846afcc86",
+          "texto": "Farinha",
+          "concluida": false
+        },
+        {
+          "id": "f545e771-3d42-40b3-be9e-d546d5ed66b8",
+          "texto": "Arroz",
+          "concluida": false
+        },
+        {
+          "id": "64c53d2e-76ef-43a4-ad8b-e289856e7373",
+          "texto": "Carne do sol",
+          "concluida": true
+        },
+        {
+          "id": "ff91ef6f-faac-4e5d-a9bb-ddafd73ebfc4",
+          "texto": "temperos",
+          "concluida": true
+        }
+      ],
+      "updatedAt": "2026-07-12T19:27:43.912Z",
+      "id": "P1fA19fvITs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

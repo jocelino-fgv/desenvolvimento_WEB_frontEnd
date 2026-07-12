@@ -110,10 +110,25 @@ async function handleAdicionarAtividade(tarefaId: string) {
                 title="Excluir atividade"
                 @click="store.removerAtividade(tarefa.id, atividade.id)"
               >
+              
               </button>
             </li>
           </ul>
 
+          <div class="tarefa-footer">
+            <div class="nova-atividade">
+              <input
+                v-model="novasAtividades[tarefa.id]"
+                placeholder="Nova atividade"
+                @keyup.enter="handleAdicionarAtividade(tarefa.id)"
+              />
+              <button class="btn btn-secondary" @click="handleAdicionarAtividade(tarefa.id)">
+                + Atividade
+              </button>
+            </div>
+
+
+          </div>
         </li>
       </ul>
     </div>
